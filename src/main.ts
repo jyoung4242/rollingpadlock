@@ -106,6 +106,10 @@ const model = {
       model.combolock.dials = [];
       model.combolock.numUserGuesses = 0;
       model.combolock.timeIsRunning = false;
+      if (model.combolock.timeHandler != 0) {
+        clearInterval(model.combolock.timeHandler);
+        model.combolock.timeHandler = 0;
+      }
       for (let index = 0; index < model.combolock.numOfTargets; index++) {
         model.combolock.dials.push({
           id: index,
